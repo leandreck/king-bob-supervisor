@@ -30,9 +30,16 @@ repositories {
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     compile 'io.vertx:vertx-core:3.3.3'
+    compile 'io.vertx:vertx-web:3.3.3'
 }
 
-mainClassName = 'io.vertx.core.Starter'
+mainClassName = 'io.vertx.core.Launcher'
+
+run {
+    args 'run', 'org.leandreck.kingbob.Supervisor'
+}
+
+//applicationDefaultJvmArgs = ["run", "-DMain-Verticle=org.leandreck.kingbob.Supervisor"]
 
 jar {
     manifest {
